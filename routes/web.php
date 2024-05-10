@@ -40,9 +40,9 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('admin', 'admin')
-    ->middleware(['auth', 'verified','admin'])
-    ->name('admin');
+// Route::view('admin', 'admin')
+//     ->middleware(['auth', 'verified','admin'])
+//     ->name('admin');
 
 Route::view('it', 'it')
     ->middleware(['auth', 'verified','it'])
@@ -648,19 +648,8 @@ Route::post('/procurementqn', function () {
     return redirect('/procurementqn');
 });
 
-
-Route::get('/tourismqn', function () {
-    $data=Tourismqnn::all();
-    return view('tourismqn',compact('data'));
-})->middleware(['auth', 'verified'])
-->name('tourismqn');
-
 Route::post('/tourismqn', function () {
 
-    // $val=request()->validate([
-    //     'content' =>'required',
-    //     'image' =>'required|image',
-    // ]);
 
     $data=new Tourismqnn();
     $data->content=request('content');
@@ -669,5 +658,27 @@ Route::post('/tourismqn', function () {
 
     return redirect('/tourismqn');
 });
+
+Route::get('/tourismqn', function () {
+    $data=Tourismqnn::all();
+    return view('tourismqn',compact('data'));
+})->middleware(['auth', 'verified'])
+->name('tourismqn');
+
+
+Route::get('/admin', function () {
+    $data=User::all();
+    return view('admin',compact('data'));
+})->middleware(['auth', 'verified','admin'])
+->name('admin');
+
+Route::get('/adminedit', function () {
+    $data=User::all();
+    return view('adminedit',compact('data'));
+})->middleware(['auth', 'verified','admin'])
+->name('edit');
+
+
+
 
 require __DIR__.'/auth.php';

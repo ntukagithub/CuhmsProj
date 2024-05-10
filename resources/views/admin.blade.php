@@ -1,3 +1,5 @@
+
+
 <x-app-layout>
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
     <div class="grid grid-cols-12 gap-6 h-screen">
@@ -84,16 +86,41 @@
             <div id="users" class=" text-white h-[100vh] ">
                <div class="text-2xl font-extrabold text-center pt-[10px] p-2">CUHMS Users</div>
                <div class="bg-gray-600 w-full h-[1px] "></div>
-               <div class="flex w-[90%] mx-auto justify-between mt-5  border border-white p-3  rounded px-10">
-                <div class="">ID</div>
-                <div>USER NAME</div>
-                <div>EMAIL</div>
-                <!--  for date in which she or registered -->
-                <div>PASWORD</div>
-                <div>DATE</div>
-                <div>ACTION</div>
-               </div>
+
+               <table class="w-full mx-auto mt-5 ">
+                      <tr class="w-[100%] mx-auto text-xl justify-between mt-5  border border-gray-600 bg-white font-bold text-gray-900   rounded">
+                        <th class="py-2">ID</th>
+                        <th>USERNAME</th>
+                        <th>EMAIL</th>
+                        <th>ROLE</th>
+                        <th>CREATED_DATE</th>
+                        <th>ACTION</th>
+                      </tr>
+                      
+                    <?php
+                     $id =1;
+                    ?>
+          
+                    @foreach ($data as $data )   
+                    <tr class="w-[100%] mx-auto bg-gray-800 justify-between mt-5  border border-gray-600   text-white text-center ">
+                                    <td class="py-2">{{$id++}}</td>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->email}}</td>
+                                    <td>{{$data->role}}</td>
+                                    <td>{{$data->created_at}}</td>
+                                    <td class="">
+                                    <a href="{{url('/adminedit')}}" ><i class="fa-solid fa-edit  text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
+                                    <a href="#" ><i class="fa-solid fa-trash  text-red-600 pl-2 text-xl"> </i></a>
+                                    </td>
+                    </tr>
+                                                
+                    @endforeach
+               
+
+               </table>
+            
             </div>
+            
              
 
             <div id="post" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
