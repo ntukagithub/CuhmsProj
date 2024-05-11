@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EditController;
 use App\Models\Itpost;
 use App\Models\accountancyposts;
 use App\Models\electrical_engineeringposts;
@@ -672,11 +673,24 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
-Route::get('/adminedit', function () {
-    $data=User::all();
-    return view('adminedit',compact('data'));
-})->middleware(['auth', 'verified','admin'])
-->name('edit');
+Route::get('/adminedit/{id}', function ($id) {
+    return app('App\Http\Controllers\EditController')->show($id);
+});
+
+Route::put('/update/{id}', function ($id) {
+
+    $data=User::find($id);
+       $data->name=request('name');
+       $data->email=request('email');
+       $data->role=request('role');
+    //    $data->password=request('password');
+    //    $data->dp=request('dp');
+       $data->update();
+    return redirect('/admin#users');
+
+});
+
+// Route::put('update/{id}', 'EditController@update');
 
 
 

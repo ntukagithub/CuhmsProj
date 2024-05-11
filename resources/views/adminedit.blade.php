@@ -14,11 +14,11 @@
             </div>
             <!-- the admin links controls -->
             <div class="max-w-[230px] mx-auto p-2 ml-5 mt-6">
-                <a href="#dashboard" class="sidebar-link"><div class="text-lg py-2 px-5 bg-gray-600 rounded max-w-[250px]"><i class="fa-solid fa-chart-line px-3 text-lg text-yellow-400"></i>Dashboard</div></a>
-                <a href="#users" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-users text-lg px-3 text-yellow-400"></i>cuhms User</div></a>
-                <a href="#post" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-bullhorn px-3 text-lg text-yellow-400"></i>Posts</div></a>
-                <a href="#discussion" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-message px-3 text-lg text-yellow-400"></i>Discussions</div></a>
-                <a href="#create" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-square-plus text-lg px-3 text-yellow-400"></i>Create User</div></a>
+                <a href="{{url('/admin#dashboard')}}" class="sidebar-link"><div class="text-lg py-2 px-5 bg-gray-600 rounded max-w-[250px]"><i class="fa-solid fa-chart-line px-3 text-lg text-yellow-400"></i>Dashboard</div></a>
+                <a href="{{url('/admin#user')}}" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-users text-lg px-3 text-yellow-400"></i>cuhms User</div></a>
+                <a href="{{url('/admin#post')}}" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-bullhorn px-3 text-lg text-yellow-400"></i>Posts</div></a>
+                <a href="{{url('/admin#discussion')}}" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-message px-3 text-lg text-yellow-400"></i>Discussions</div></a>
+                <a href="{{url('/admin#create')}}" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-square-plus text-lg px-3 text-yellow-400"></i>Create User</div></a>
                 <div class="text-sm opacity-25  absolute bottom-3 bg-inherit text-white py-2">@Created by cuhms team.2024</div>
             </div>
         </div>
@@ -30,21 +30,38 @@
                
 
                 <div class=" flex gap-4 w-[95%] mx-auto mt-5">
-                    <form action=""  class="max-w-[300px] mx-auto">
+                    <form action="{{url('update/'.$data->id)}}" method="POST"  class="w-[400px] mx-auto border border-gray-600 rounded-lg p-5  mt-10  ">
+                        @csrf
+                        @method('PUT')
                         <div>
-                          <div></div>
-                        <h1>Update user</h1>
+                            <div class="w-[100px] h-[100px] rounded-full mx-auto  bg-gray-600"><img src="photos/CUHMS.png" alt=""></div>
+                            <h1 class="text-center text-3xl font-bold text-yellow-500">Update user</h1>
                         </div>
-                        <label for="username">user name</label><br>
-                        <input type="text name="username" id="username"><br>
+                        <div class="mt-4">
+                            <label for="name" class="text-xl pl-1">user name</label><br>
+                            <input type="text" name="name" id="name" value="{{$data->name}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"><br>
+                        </div>
 
-                        <label for="email">Email</label><br>
-                        <input type="text name="email" id="email"><br>
+                        <div class="mt-4">
+                            <label for="role" class="text-xl pl-1">Role</label><br>
+                            <input type="text" name="role" id="role" value="{{$data->role}}"class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"><br>
+                        </div>
 
-                        <label for="password">password</label><br>
-                        <input type="" name="password" id="password"><br>
+                        <div class="mt-4">
+                            <label for="email" class="text-xl pl-1">Email</label><br>
+                            <input type="text" name="email" id="email" value="{{$data->email}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                        </div>
+                            
+                            <!-- <input type="hidden"name="password" id="password" value="{{$data->password}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                            <input type="hidden"name="dp" id="dp" value="{{$data->dp}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                                -->
 
-                        <input type="submit" name="submit" id="submit" value="Update">
+                        <div class="mt-6 mb-4">
+                            <input type="submit" name="submit" id="submit" value="Update" class="p-1 bg-yellow-500 rounded py-2 w-full focus:border-none hover:cursor-pointer hover:bg-gray-600 duration-300 font-bold text-gray-900 hover:text-white">
+                        </div>
+
+
+
                     </form>
                 </div>
                 

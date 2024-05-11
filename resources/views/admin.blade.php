@@ -98,19 +98,19 @@
                       </tr>
                       
                     <?php
-                     $id =1;
+                     $count =1;
                     ?>
           
                     @foreach ($data as $data )   
                     <tr class="w-[100%] mx-auto bg-gray-800 justify-between mt-5  border border-gray-600   text-white text-center ">
-                                    <td class="py-2">{{$id++}}</td>
+                                    <td class="py-2">{{$count++}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->role}}</td>
                                     <td>{{$data->created_at}}</td>
                                     <td class="">
-                                    <a href="{{url('/adminedit')}}" ><i class="fa-solid fa-edit  text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
-                                    <a href="#" ><i class="fa-solid fa-trash  text-red-600 pl-2 text-xl"> </i></a>
+                                    <a href="{{url('/adminedit/'. $data->id )}}"><i class="fa-solid fa-edit text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
+                                    <a href="{{url('/adminedit/'. $data->id )}}" ><i class="fa-solid fa-trash  text-red-600 pl-2 text-xl"> </i></a>
                                     </td>
                     </tr>
                                                 
