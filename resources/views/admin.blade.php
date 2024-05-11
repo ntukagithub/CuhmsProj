@@ -1,6 +1,8 @@
 
 
 <x-app-layout>
+
+
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
     <div class="grid grid-cols-12 gap-6 h-screen">
         <!-- Sidebar -->
@@ -110,7 +112,10 @@
                                     <td>{{$data->created_at}}</td>
                                     <td class="">
                                     <a href="{{url('/adminedit/'. $data->id )}}"><i class="fa-solid fa-edit text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
-                                    <a href="{{url('/adminedit/'. $data->id )}}" ><i class="fa-solid fa-trash  text-red-600 pl-2 text-xl"> </i></a>
+                                    <a href="{{ url('/delete/'. $data->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
+                                    <i class="fa-solid fa-trash text-red-600 pl-2 text-xl"></i>
+</a>
+
                                     </td>
                     </tr>
                                                 
@@ -156,5 +161,7 @@
             });
         });
     </script>
-    
+
+
+
 </x-app-layout>

@@ -670,6 +670,7 @@ Route::get('/tourismqn', function () {
 Route::get('/admin', function () {
     $data=User::all();
     return view('admin',compact('data'));
+    notify()->success('Welcome to Laravel Notify ⚡️') or notify()->success('Welcome to Laravel Notify ⚡️', 'My custom title');
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
@@ -688,6 +689,15 @@ Route::put('/update/{id}', function ($id) {
        $data->update();
     return redirect('/admin#users');
 
+});
+
+
+Route::get('delete/{id}', function($id){
+
+    $data = User::find($id);
+    $data->delete();
+
+    return redirect('/admin#users');
 });
 
 // Route::put('update/{id}', 'EditController@update');
