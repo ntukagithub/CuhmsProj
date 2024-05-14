@@ -134,8 +134,73 @@
             <div id="discussion" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
                 Discusion management
             </div>
-            <div id="create" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
-                Create User Managemnt
+            <div id="create" class=" text-white h-[100vh] w-full  pt-[10px]">
+            <div class="text-center text-2xl font-extrabold text-gray-500">REGISTER NEW USER IN OUR SYSTEM MANUALY</div>
+                <div class="bg-gray-600 h-[1px] w-full mt-2"></div>
+
+            <form action="/admin-create" method="POST"  class="w-[410px] mx-auto border border-gray-600 rounded-lg p-5  mt-7   ">
+                        @csrf
+                        <div>
+                            
+                            <h1 class="text-center text-3xl font-bold text-yellow-500">Create New User</h1>
+                        </div>
+                        <div class="mt-4">
+                            <label for="name" class="text-xl pl-1">user name</label><br>
+                            <input type="text" name="name" id="name" required class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"><br>
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="email" class="text-xl pl-1">Email</label><br>
+                            <input type="text" name="email" required id="email"  class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        </div>
+                            
+
+                        <div class="mt-4">
+                        <label for="role" class="text-xl pl-1">Role</label><br>
+                        <select wire:model="role" id="role" name="role" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"  >
+                            <option value="" class="text-center">-------choose a user professional-------</option>
+                            <option value="IT" class="">IT</option>
+                            <option value="Procurement">Procurement</option>
+                            <!-- <option value="Computer_science">Computer_science</option> -->
+                            <option value="marketing">marketing</option>
+                            <option value="admin">admin</option>
+                            <option value="B_administration">B_Administration</option>
+                            <option value="Accountancy">Accountancy</option>
+                            <option value="BA_HR">BA_HR</option>
+                            <option value="Civil_engineering">Civil_engineering</option>`
+                            <option value="Clinical_medicine">Clinical_medicine</option>
+                            <option value="Laboratory_engineering">Laboratory_engineering</option>
+                            <option value="Tourism">Tourism</option>
+                            <option value="Law">Law</option>
+                            <option value="Electrical_engineering">Electrical_engineering</option>
+
+                        </select>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="password" class="text-xl pl-1">Password</label><br>
+                            <input type="text" name="password" required id="password" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"><br>
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        </div>                   
+                            <!-- <input type="hidden"name="password" id="password" value="{{$data->password}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                            <input type="hidden"name="dp" id="dp" value="{{$data->dp}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
+                                -->
+
+                        <div class="mt-6 mb-4">
+                            <input type="submit" name="submit" required id="submit" value="Create" class="p-1 bg-yellow-500 rounded py-2 w-full focus:border-none hover:cursor-pointer hover:bg-white duration-300 font-extrabold text-gray-900 hover:text-grey">
+                        
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+
+                
+            </div>
             </div>
             
             <!-- Add your main content here -->

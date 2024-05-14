@@ -700,7 +700,25 @@ Route::get('delete/{id}', function($id){
     return redirect('/admin#users');
 });
 
-// Route::put('update/{id}', 'EditController@update');
+Route::post('/admin-create', function (Illuminate\Http\Request $request) {
+    $validateddata=$request->validate([
+        'name'=>'required|string|max:255',
+        'email'=>'required|unique:users|max:255',
+        'role'=>'required|string|max:255',
+        'password=>required|string|min:8|',
+    ]);
+
+
+
+    $data=new User();
+    $data->name=request('name');
+    $data->email=request('email');
+    $data->role=request('role');
+    $data->password=bcrypt(request('password'));
+    $data->save();
+
+    return redirect('/admin#create');
+});
 
 
 
