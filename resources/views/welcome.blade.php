@@ -31,7 +31,7 @@
             @endif
 </nav>
 
-<div class="max-w-[800px] mx-auto mt-[170px]">
+<div class="max-w-[900px] mx-auto mt-[170px] ">
     <div class="width-full  text-3xl">
         <b class="text-yellow-500">CUHMS:</b><b id="auto" class="pl-3 text-white font-bold pt-1"></b>
     </div>
@@ -47,7 +47,8 @@
         loop: true,
     });
   </script>
-      <span class="text-1xl leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est 
+  <div class="">
+      <span class="text-1xl leading-7 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est 
         quos porro, aut magni, voluptatum dicta incidunt, minus ad tenetur impedit 
         quasi deserunt totam facere sit! Nemo quia quas aperiam!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -55,10 +56,13 @@
       </span>
     </div>
 
+    <button class="border border-yellow-500 text-white text-center  px-2 rounded py-2 w-[200px] font-bold mt-8 hover:bg-yellow-500 hover:cursor-pointer mx-auto hover:ease-in duration-300 hover:text-white">Get Started</button>
+    </div>
+
 
    
-    <button class="bg-yellow-400 text-gray-900 text-center px-2 rounded py-2 w-[150px] font-bold mt-8 hover:bg-slate-500 hover:cursor-pointer hover:ease-in duration-300 hover:text-white">About US</button>
     
+  
     
 </div>
 
