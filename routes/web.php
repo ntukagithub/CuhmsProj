@@ -20,16 +20,16 @@ use App\Http\Controllers\DpController;
 
 use App\Models\Itqnn;
 use App\Models\Accountqnn;
-use App\Models\Electrical_engineeringqn;
+use App\Models\Electrical_engineeringqnn;
 use App\Models\Civil_engineeringqnn;
 use App\Models\Procurementqnn;
 use App\Models\Ba_hrqnn;
 use App\Models\Lawqnn;
 use App\Models\Marketingqnn;
-use App\Models\b_administrationqnn;
+use App\Models\B_administrationqnn;
 use App\Models\Tourismqnn;
 use App\Models\Laboratory_engineeringqnn;
-use App\Models\Clinical_medicineqnn;
+use App\Models\Clinical_medicineqn;
 
 
 
@@ -449,7 +449,7 @@ Route::post('/accountancyqn', function () {
     //     'image' =>'required|image',
     // ]);
 
-    $data=new Accountancyqnn();
+    $data=new Accountqnn();
     $data->content=request('content');
     $data->image=request('image');
     $data->save();
@@ -458,7 +458,7 @@ Route::post('/accountancyqn', function () {
 });
 
 Route::get('/b_administrationqn', function () {
-    $data=b_administrationqnn::all();
+    $data=B_administrationqnn::all();
     return view('b_administrationqn',compact('data'));
 })->middleware(['auth', 'verified'])
 ->name('b_administrationqn');
@@ -523,7 +523,7 @@ Route::post('/civil_engineeringqn', function () {
 
 
 Route::get('/clinical_medicineqn', function () {
-    $data=Clinical_medicineqnn::all();
+    $data=Clinical_medicineqn::all();
     return view('clinical_medicineqn',compact('data'));
 })->middleware(['auth', 'verified'])
 ->name('clinical_medicineqn');
@@ -535,7 +535,7 @@ Route::post('/clinical_medicineqn', function () {
     //     'image' =>'required|image',
     // ]);
 
-    $data=new Clinical_medicine();
+    $data=new clinical_medicineqn();
     $data->content=request('content');
     $data->image=request('image');
     $data->save();
