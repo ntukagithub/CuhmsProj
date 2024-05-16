@@ -9,7 +9,7 @@
     @livewireStyles
 
 </head>
-<body class="bg-gray-800 text-white  bg-[url('photos/people.jpg')] bg-cover bg-blend-multiply " >
+<body class="bg-gray-900 text-gray-300  bg-[url('photos/people.jpg')] bg-cover bg-blend-multiply " >
 <nav class=" bg-yellow-500 w-full h-[8.5vh]">
     <div class="flex gap-3 ml-7 pt-2">
         <img src="photos/careerlogo.png" alt="cuhms logo" class="w-[50px] ">
@@ -33,10 +33,10 @@
 
 <div class="max-w-[900px] mx-auto mt-[170px] ">
     <div class="width-full  text-3xl">
-        <b class="text-yellow-500">CUHMS:</b><b id="auto" class="pl-3 text-white font-bold pt-1"></b>
+        <b class="text-yellow-500">CUHMS:</b><b id="auto" class="pl-3 text-gray-300 font-bold pt-1"></b>
     </div>
 
-    <div class="w-full mt-[10px]">
+    <div class="w-full mt-[10px] text-center">
        <!-- <div class="tex-xl font-bold"></div> -->
        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
        <script>
@@ -48,7 +48,7 @@
     });
   </script>
   <div class="">
-      <span class="text-1xl leading-7 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est 
+      <span class="text-1xl leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est 
         quos porro, aut magni, voluptatum dicta incidunt, minus ad tenetur impedit 
         quasi deserunt totam facere sit! Nemo quia quas aperiam!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -56,15 +56,18 @@
       </span>
     </div>
 
-    <button class="border border-yellow-500 text-white text-center  px-2 rounded py-2 w-[200px] font-bold mt-8 hover:bg-yellow-500 hover:cursor-pointer mx-auto hover:ease-in duration-300 hover:text-white">Get Started</button>
+    
     </div>
 
 
-   
-    
-  
-    
 </div>
+
+<div class="max-w-[900px] flex flex-col mx-auto">
+<button class="border border-yellow-500 text-gray-300 text-center  px-2 rounded-sm py-2 w-[200px] mx-auto font-bold mt-7 hover:bg-yellow-500 hover:cursor-pointer  hover:ease-in duration-300 hover:text-gray-900">Get Started</button>
+</div>
+
+
+<div class="absolute bottom-2 text-gray-600 ml-[43%] opacity-70">Created by cuhms Team@2024</div>
 
 
 
