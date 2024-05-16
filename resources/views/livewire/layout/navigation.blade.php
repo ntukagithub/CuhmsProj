@@ -11,7 +11,7 @@ $logout = function (Logout $logout) {
 
 ?>
 
-<nav x-data="{ open: false }" class="text-white  bg-white">
+<nav x-data="{ open: false }" class="text-white  bg-yellow-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-[8vh] ">
@@ -24,9 +24,9 @@ $logout = function (Logout $logout) {
                 </div>
 
                 
-                    <div class="w-[32px] h-[32px] bg-gray-900 mt-[12px] border border-white rounded-full absolute right-[210px] overflow-hidden">
+                    <!-- <div class="w-[32px] h-[32px] bg-gray-900 mt-[12px] border border-white rounded-full absolute right-[210px] overflow-hidden">
                         <img src="photos/joel.jpg" alt="" width="300px" height="300px">
-                    </div>
+                    </div> -->
 
                     <div class="w-[32px] h-[32px]  mt-[12px]  absolute right-[30px] overflow-hidden">
                         <img src="photos/notification.png" alt="" width="300px" height="300px">

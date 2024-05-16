@@ -10,7 +10,7 @@
 
 </head>
 <body class="bg-gray-800 text-white  bg-[url('photos/people.jpg')] bg-cover bg-blend-multiply " >
-<nav class=" bg-white w-full h-[8.5vh]">
+<nav class=" bg-yellow-500 w-full h-[8.5vh]">
     <div class="flex gap-3 ml-7 pt-2">
         <img src="photos/careerlogo.png" alt="cuhms logo" class="w-[50px] ">
         <div class=" text-gray-900 font-extrabold text-3xl ">CUHMS</div>

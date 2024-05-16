@@ -1,85 +1,48 @@
-
 <x-app-layout>
 <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
- 
 
-<h1 class="text-white text-center py-2 text-xl font-bold">WELCOME TO OUR TOURISM DASHBOARD</h1>
-<div class="max-w-[500px] mx-auto flex  items-center gap-5 mt-6 text-white">
-  <div class="border border-yellow-500 py-2 px-5 w-[220px] rounded-lg text-center hover:bg-yellow-500 hover:text-white  hover:font-bold hover:cursor-pointer duration-300 "> <a href="{{route('profile')}}"><a href="{{ url('chatify') }}"><i class="fa-regular fa-message pr-2 text-white hover:text-gray-900 "></i>Chat Now</a></div>
-  <div class="border border-yellow-500 py-2 px-5 w-[170px] rounded-lg text-center hover:bg-yellow-500 hover:text-white hover:font-bold hover:cursor-pointer duration-300"> <a href="{{route('tourismposts')}}"> <i class="fa-solid fa-bullhorn pr-2 text-white hover:text-gray-900 "></i>Posts</a></div>
-  <a href="{{route('tourismqn')}}"><div class="border border-yellow-500 py-2 px-5 w-[170px] rounded-lg text-center hover:bg-yellow-500 hover:text-white hover:font-bold hover:cursor-pointer duration-300"> <i class="fa-solid fa-circle-question pr-2 text-white hover:text-gray-900 "></i>Ask Me</div></a>
-</div>  
-
-
-
-<div class=" max-w-[680px] grid grid-cols-3 mx-auto mt-5 gap-5 overflow-hidden ">
-<div class="card w-[210px] h-[210px] bg-white text-primary-content hover:scale-105 duration-300 hover:cursor-pointer ">
-  <div class="card-body">
-  <div class="card-actions justify-end  mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Enroll</button>
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    
+<div id="borderAnimation" class="w-[1000px] border border-gray-600 mx-auto mt-5 p-4 py-10 rounded relative">
+  <h1 class="text-center pt-3 text-3xl font-extrabold text-yellow-500">OUR TOURISM HUB</h1>
+  <div class="max-w-[900px] mx-auto flex items-center gap-5 mt-4 text-gray-400 pt-2 pb-5 text-1xl text-center">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    Corrupti aliquid assumenda iure quisquam non soluta, dolore quidem. Quam, hic. Nihil, incidunt illum. officia hic distinctio
+    repudiandae reiciendis possimus ad laborum, soluta, dolore quidem. Quam, hic. Nihil, incidunt illum.
   </div>
 </div>
 
-<div class="card w-[210px] h-[210px] bg-white text-primary-content hover:scale-105 duration-300 hover:cursor-pointer ">
-  <div class="card-body">
-  <div class="card-actions justify-end mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Buy Now</button>
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    
-  </div>
-</div>
 
-<div class="card w-[210px] h-[210px] bg-white text-primary-content hover:scale-105 duration-300 hover:cursor-pointer">
-  <div class="card-body">
-  <div class="card-actions justify-end mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Buy Now</button> 
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    
-  </div>
-</div>
+<div class=" w-[1000px] mx-auto text-center text-2xl mt-5 font-extrabold ">THE MAIN TOOLS FOR OUR HUB</div>
+<div class="w-[1000px] mx-auto flex   items-center gap-5 mt-[20px] text-white ">
+<a href="{{ url('chatify') }}" >
+  <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-regular fa-message  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-3  text-yellow-500">Chat Now</div></div>
+</a>
 
-<div class="card w-[210px] h-[210px] bg-white text-primary-content hover:scale-105 duration-300 hover:cursor-pointer">
-  <div class="card-body">
-  <div class="card-actions justify-end mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Buy Now</button>
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    
-  </div>
-</div>
+<a href="{{route('tourismposts')}}" >
+  <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-solid fa-bullhorn  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-3 font-extralight text-yellow-500">Posts</div></div>
+</a>
 
-<div class="card w-[210px] h-[210px] bg-white text-primary-content hover:scale-105 duration-300 hover:cursor-pointer">
-  <div class="card-body">
-  <div class="card-actions justify-end mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Buy Now</button>
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    
-  </div>
-</div>
+<a href="{{route('tourismqn')}}" >
+  <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-solid fa-circle-question  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-3 text-yellow-500 font-extralight">Ask Me</div></div>
+</a>
 
-<div class="card w-[210px] h-[210px]  text-primary-content bg-white hover:scale-105 duration-300 hover:cursor-pointer">
-  <div class="card-body">
-  <div class="card-actions justify-end mt-[-20px]">
-      <button class="btn w-[80px] h-[80px] mx-auto rounded-full">Buy Now</button>
-    </div>
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-   
-  </div>
-</div>
+<a href="{{ url('chatify') }}" >
+  <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-regular fa-message  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-2 p-3 text-yellow-500 font-extralight">Creers Collaboration</div></div>
+</a>
 
 </div>
+
+
 </x-app-layout>
+
+
+
+
+
+
+
+
+
+
+
 
 
