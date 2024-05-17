@@ -21,7 +21,7 @@
   <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-solid fa-bullhorn  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-3 font-extralight text-yellow-500">Posts</div></div>
 </a>
 
-<a href="{{route('procurementqn')}}" >
+<a href="{{ route('collaboration') }}" >
   <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-solid fa-circle-question  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-3 text-yellow-500 font-extralight">Ask Me</div></div>
 </a>
 

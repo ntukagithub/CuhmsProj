@@ -30,6 +30,7 @@ use App\Models\B_administrationqnn;
 use App\Models\Tourismqnn;
 use App\Models\Laboratory_engineeringqnn;
 use App\Models\Clinical_medicineqn;
+use App\Models\Collaboration;
 
 
 
@@ -719,6 +720,25 @@ Route::post('/admin-create', function (Illuminate\Http\Request $request) {
 
     return redirect('/admin#create');
 });
+
+Route::get('/collaboration', function () {
+    $data=Collaboration::all();
+    return view('collaboration',compact('data'));
+})->middleware(['auth', 'verified'])
+->name('collaboration');
+
+Route::post('/send-data', function () {
+
+    $data=new Collaboration();
+    $data->content=request('content');
+    $data->image=request('image');
+    $data->save();
+
+    return redirect('/collaboration');
+});
+
+
+
 
 
 
