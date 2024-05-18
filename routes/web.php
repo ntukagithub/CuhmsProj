@@ -670,8 +670,8 @@ Route::get('/tourismqn', function () {
 
 Route::get('/admin', function () {
     $data=User::all();
-    return view('admin',compact('data'));
-    notify()->success('Welcome to Laravel Notify ⚡️') or notify()->success('Welcome to Laravel Notify ⚡️', 'My custom title');
+    $collaboration=Collaboration::all();
+    return view('admin',compact('data','collaboration'));
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
@@ -738,8 +738,13 @@ Route::post('/send-data', function () {
 });
 
 
+Route::get('/delete/{id}', function($id){
+   $coll=Collaboration::find($id);
+   $coll->delete();
 
+   return redirect('/admin#discussion');
 
+});
 
 
 

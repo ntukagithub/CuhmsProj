@@ -16,11 +16,11 @@
             </div>
             <!-- the admin links controls -->
             <div class="max-w-[230px] mx-auto p-2 ml-5 mt-6">
-                <a href="#dashboard" class="sidebar-link"><div class="text-lg py-2 px-5 bg-gray-600 rounded max-w-[250px]"><i class="fa-solid fa-chart-line px-3 text-lg text-yellow-400"></i>Dashboard</div></a>
-                <a href="#users" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-users text-lg px-3 text-yellow-400"></i>cuhms User</div></a>
-                <a href="#post" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-solid fa-bullhorn px-3 text-lg text-yellow-400"></i>Posts</div></a>
-                <a href="#discussion" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-message px-3 text-lg text-yellow-400"></i>Discussions</div></a>
-                <a href="#create" class="sidebar-link"><div class="text-lg py-2 px-5"><i class="fa-regular fa-square-plus text-lg px-3 text-yellow-400"></i>Create User</div></a>
+                <a href="#dashboard" class="sidebar-link"><div class="text-lg py-2 mt px-5 mt-2  bg-gray-600 rounded max-w-[250px]"><i class="fa-solid fa-chart-line px-3 text-lg text-yellow-400"></i>Dashboard</div></a>
+                <a href="#users" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-solid fa-users text-lg px-3 text-yellow-400"></i>cuhms User</div></a>
+                <a href="#post" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-solid fa-bullhorn px-3 text-lg text-yellow-400"></i>Announce users</div></a>
+                <a href="#discussion" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-regular fa-message px-3 text-lg text-yellow-400"></i>Discussions</div></a>
+                <a href="#create" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-regular fa-square-plus text-lg px-3 text-yellow-400"></i>Create User</div></a>
                 <div class="text-sm opacity-25  absolute bottom-3 bg-inherit text-white py-2">@Created by cuhms team.2024</div>
             </div>
         </div>
@@ -73,7 +73,7 @@
 
                     <div>
                         <div class="bg-gray-800 w-[250px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
-                            <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Colaboration</div>
+                            <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Collaboration</div>
                             <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit. Eligendi con </div>
                         </div>
                         
@@ -128,12 +128,26 @@
              
 
             <div id="post" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
-                Posts management
+                Announcement for all users in cuhms user
             </div>
 
-            <div id="discussion" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
-                Discusion management
+            <div id="discussion" class=" text-white h-[100vh] w-full text-center  ">
+            
+               <div class="text-2xl font-extrabold text-center pt-[10px] p-2">Graduates Collaboration Conversation</div>
+               <div class="bg-gray-600 w-full h-[1px] "></div>
+                <div class="max-w-[500px] mx-auto border text-left border-gray-600 rounded h-[85vh] mt-3 overflow-scroll overflow-x-hidden overflow-y-auto">
+
+                @foreach ($collaboration as $collaboration )
+                   <div class="flex mt-2 ml-5 ">
+                        <div class="bg-white w-[40px] h-[40px] mt-2 ml-2 rounded-full overflow-hidden"> <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /></div>
+                        <div class="border border-gray-600 w-[350px]  p-4 mt-1.5 ml-3 rounded-xl text-white">{{$collaboration->content}}</div>
+                        <div class=""><a href="{{'/delete/'.$collaboration->id}}" onclick="return confirm('are you sure you want to delete this massage!!');"><li class="fa-solid fa-trash text-red-600 text-2xl pt-5 pl-3"></li></a></div>
+                    </div>
+                @endforeach
+                    
+                </div>
             </div>
+
             <div id="create" class=" text-white h-[100vh] w-full  pt-[10px]">
             <div class="text-center text-2xl font-extrabold text-gray-500">REGISTER NEW USER IN OUR SYSTEM MANUALY</div>
                 <div class="bg-gray-600 h-[1px] w-full mt-2"></div>

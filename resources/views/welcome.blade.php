@@ -31,13 +31,16 @@
             @endif
 </nav>
 
+
+
 <div class="max-w-[900px] mx-auto mt-[170px] ">
     <div class="width-full  text-3xl">
         <b class="text-yellow-500">CUHMS:</b><b id="auto" class="pl-3 text-gray-300 font-bold pt-1"></b>
     </div>
 
-    <div class="w-full mt-[10px] text-center">
+    <div class="w-full mt-[10px] text-center ">
        <!-- <div class="tex-xl font-bold"></div> -->
+       
        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
        <script>
         var typed = new Typed('#auto', {
@@ -63,15 +66,13 @@
 </div>
 
 <div class="max-w-[900px] flex flex-col mx-auto">
-<button class="border border-yellow-500  hover:animate-none text-gray-300 text-center  px-2 rounded py-2 w-[200px] mx-auto font-bold mt-7 hover:bg-yellow-500 hover:cursor-pointer  hover:ease-in duration-300 hover:text-gray-900">Get Started</button>
+  <a href="{{route('register')}}" class="border border-yellow-500  hover:animate-none text-gray-300 text-center  px-2 rounded py-2 w-[200px] mx-auto font-bold mt-7 hover:bg-yellow-500 hover:cursor-pointer  hover:ease-in duration-300 hover:text-gray-900">
+<button>Get Started</button>
+</a>
 </div>
 
 
 <div class="absolute bottom-2  text-gray-600 ml-[43%] opacity-70">Created by cuhms Team@2024</div>
-
-
-
-
 
 
 <!-- <script>
