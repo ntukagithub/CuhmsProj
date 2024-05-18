@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
 
 <div id="borderAnimation" class="w-[1000px] border border-gray-600 mx-auto mt-5 p-4 py-10 rounded relative">
-  <h1 class="text-center pt-3 text-3xl font-extrabold text-yellow-500">OUR BA-HR HUB</h1>
+  <h1 class="text-center pt-3 text-3xl font-extrabold text-yellow-500 animate-bounce">OUR BA-HR HUB</h1>
   <div class="max-w-[900px] mx-auto flex items-center gap-5 mt-4 text-gray-400 pt-2 pb-5 text-1xl text-center">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
     Corrupti aliquid assumenda iure quisquam non soluta, dolore quidem. Quam, hic. Nihil, incidunt illum. officia hic distinctio
