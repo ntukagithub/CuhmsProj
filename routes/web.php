@@ -31,6 +31,7 @@ use App\Models\Tourismqnn;
 use App\Models\Laboratory_engineeringqnn;
 use App\Models\Clinical_medicineqn;
 use App\Models\Collaboration;
+use App\Models\Inform;
 
 
 
@@ -671,7 +672,8 @@ Route::get('/tourismqn', function () {
 Route::get('/admin', function () {
     $data=User::all();
     $collaboration=Collaboration::all();
-    return view('admin',compact('data','collaboration'));
+    $inform=Inform::all();
+    return view('admin',compact('data','collaboration','inform'));
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
@@ -723,7 +725,8 @@ Route::post('/admin-create', function (Illuminate\Http\Request $request) {
 
 Route::get('/collaboration', function () {
     $data=Collaboration::all();
-    return view('collaboration',compact('data'));
+    $inf=Inform::all();
+    return view('collaboration',compact('data','inf'));
 })->middleware(['auth', 'verified'])
 ->name('collaboration');
 
@@ -745,6 +748,28 @@ Route::get('/delete/{id}', function($id){
    return redirect('/admin#discussion');
 
 });
+
+
+//admin inform
+Route::post('/submit-data', function () {
+
+    $data=new Inform();
+    $data->content=request('content');
+    $data->image=request('image');
+    $data->save();
+
+    return redirect('/admin#post');
+});
+
+
+Route::get('/deletemessage/{id}', function($id){
+    $colls=Inform::find($id);
+    $colls->delete();
+ 
+    return redirect('/admin#post');
+ 
+ });
+ 
 
 
 

@@ -105,17 +105,17 @@
           
                     @foreach ($data as $data )   
                     <tr class="w-[100%] mx-auto bg-gray-800 justify-between mt-5  border border-gray-600   text-white text-center ">
-                                    <td class="py-2">{{$count++}}</td>
-                                        <td>{{$data->name}}</td>
-                                        <td>{{$data->email}}</td>
-                                        <td>{{$data->role}}</td>
-                                        <td>{{$data->created_at}}</td>
-                                        <td class="">
-                                        <a href="{{url('/adminedit/'. $data->id )}}"><i class="fa-solid fa-edit text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
-                                        <a href="{{ url('/delete/'. $data->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
-                                        <i class="fa-solid fa-trash text-red-600 pl-2 text-xl"></i>
-                                        </a>
-                                    </td>
+                        <td class="py-2">{{$count++}}</td>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->email}}</td>
+                            <td>{{$data->role}}</td>
+                            <td>{{$data->created_at}}</td>
+                            <td class="">
+                            <a href="{{url('/adminedit/'. $data->id )}}"><i class="fa-solid fa-edit text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
+                            <a href="{{ url('/delete/'. $data->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
+                            <i class="fa-solid fa-trash text-red-600 pl-2 text-xl"></i>
+                            </a>
+                        </td>
                     </tr>
                                                 
                     @endforeach
@@ -127,8 +127,38 @@
             
              
 
-            <div id="post" class=" text-white h-[100vh] w-full text-center  pt-[300px]">
-                Announcement for all users in cuhms user
+            <div id="post" class=" text-white h-[100vh] w-full text-center  pt-[20px]">
+                                    
+                               
+                    <div class="text-white bg-gray-600 max-w-[500px] mx-auto font-black  text-1xl text-center pt-1 border border-gray-600 mt-1 rounded-t-lg  ">Inform Cuhms Users</div>
+                    <div class=" max-w-[500px] h-[78vh] mx-auto border border-gray-600 overflow-scroll overflow-x-hidden overflow-y-auto  mt-0  ">
+                    
+                    @foreach ($inform as $inform )
+
+                        <div class="flex ml-10">
+                            <div class="bg-white w-[40px] h-[40px] mt-4 mr-4 rounded-full overflow-hidden"> <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /></div>
+                            <div class="border border-red-500 w-[350px]  text-left p-4 mt-4 ml-1 rounded-xl text-gray-400">{{$inform->content}}</div>
+                            <div class=""><a href="{{'/deletemessage/'.$inform->id}}" onclick="return confirm('are you sure you want to delete this massage!!');"><li class="fa-solid fa-trash text-red-600 text-2xl pt-7 pl-2"></li></a></div>
+                        </div>
+
+                    @endforeach
+                        
+                    
+                    </div>
+                    <div class="max-w-[500px] mx-auto h-[0.5vh] bg-gray-900 "></div>
+                    <div >
+                                <form  method="post" action="/submit-data" class="max-w-[500px] h-[7vh] bg-white mx-auto mt-[-3px] rounded-b flex shadow-lg " >
+                                @csrf
+                                <textarea name="content" rows="number_of_rows" cols="number_of_columns" placeholder="Create Your Post Here..." class="rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900  autocomplete="off" required"></textarea>
+                                <input type="hidden" name="image"  value="joel.jpg">
+                                <!-- <input  type="text" name="content" placeholder="Create Your Post Here..." class=" rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900 " autocomplete="off" required   > -->
+                                <button type="submit" wire:click="$refresh" class="border h-[6vh] border-gray-900 bg-gray-900 w-[44px] mt-1 hover:bg-gray-600 duration-300 hover:border-gray-600 rounded-r" wire:click="$refresh" > <i class="fa-solid fa-paper-plane text-1xl  text-white  "></i> </button>
+                                </form>
+                    </div>
+                    
+
+
+            
             </div>
 
             <div id="discussion" class=" text-white h-[100vh] w-full text-center  ">

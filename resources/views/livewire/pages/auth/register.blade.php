@@ -111,6 +111,7 @@ $register = function () {
 
 ?>
 
+
 <div>
 <div class="text-xl text-center font-extrabold bg-gray-900  py-2 px-2 w-[150px] text-white mx-auto mb-[10px] mt-[10px] rounded">REGISTER</div>
 
