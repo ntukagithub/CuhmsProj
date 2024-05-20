@@ -29,7 +29,7 @@
    @foreach ($inf as $inf )
    <div class="flex ml-[105px] flex-col mt-3 ">
    <div class="p-1 w-[350px] ml-3 bg-red-600 text-center text-white rounded-t-lg">From Admin</div>
-   <div class="border border-red-500 w-[350px]  p-4 ml-3 rounded-b-xl text-gray-300"> 
+   <div class="border border-red-600 w-[350px]  p-4 ml-3 rounded-b-xl text-gray-300"> 
     
     {{$inf->content}}
   </div>
