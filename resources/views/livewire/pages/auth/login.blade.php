@@ -97,7 +97,7 @@ $login = function () {
     <form wire:submit="login" class="pt-[70px]">
         <!-- Email Address -->
 
-        <div class="text-3xl text-center font-extrabold bg-gray-900  py-2 px-2 w-[200px] text-white mx-auto mb-[30px] mt-[20px] rounded">LOGIN</div>
+        <div class="text-3xl text-center font-extrabold bg-gray-900  py-2 px-2 w-[200px] text-white mx-auto mb-[30px]  rounded">LOGIN</div>
 
         <div class="border-2 border-gray-900 rounded-md p-5 w-full mb-7">
         <div>
@@ -135,7 +135,7 @@ $login = function () {
             @endif
 
             <x-primary-button class="ms-3  ">
-                <b class="">Log In</b>
+                <b class="">LogIn</b>
             </x-primary-button>
         
     </form>

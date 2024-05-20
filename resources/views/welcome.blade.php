@@ -9,7 +9,12 @@
     @livewireStyles
 
 </head>
-<body class="bg-gray-900 text-gray-300  bg-[url('photos/people.jpg')] bg-cover bg-blend-multiply " >
+
+<body class=" text-gray-300 bg-gray-900 " >
+  <video autoplay loop muted playinline class="absolute w-full opacity-15 h-[100vh] object-cover z-[-1]  ">
+    <source src="photos/bgvideo.mp4" type="video/mp4" >
+  </video>
+  
 <nav class=" bg-yellow-500 w-full h-[8.5vh]">
     <div class="flex gap-3 ml-7 pt-2">
         <img src="photos/careerlogo.png" alt="cuhms logo" class="w-[50px] ">

@@ -24,12 +24,12 @@
                 </a>
             </div>
 
-            <div class="bg-gray-900 w-[300px] h-[90vh]  overflow-hidden rounded-lg text-center pt-[170px]">
-                <b class="text-yellow-400 text-4xl font-extrabold">CUHMS</b><img src="photos/CUHMS.png" alt="cuhms" class="w-[90px] pt-3 mx-auto">
+            <div class="bg-gray-900 w-[250px] h-[90vh]  overflow-hidden rounded-lg text-center pt-[170px]">
+                <b class="text-yellow-500 text-4xl font-extrabold">CUHMS</b><img src="photos/CUHMS.png" alt="cuhms" class="w-[90px] pt-3 mx-auto">
             </div>
             
 
-            <div class="w-full sm:max-w-[350px]  px-6 py-4 bg-white  overflow-hidden rounded-lg">
+            <div class="w-full sm:max-w-[330px]  px-6 py-4 bg-yellow-500  overflow-hidden rounded-lg">
                 {{ $slot }}
             </div>
         </div>
