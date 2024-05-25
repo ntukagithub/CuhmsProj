@@ -32,6 +32,7 @@ use App\Models\Laboratory_engineeringqnn;
 use App\Models\Clinical_medicineqn;
 use App\Models\Collaboration;
 use App\Models\Inform;
+use App\Models\Archived;
 
 
 
@@ -673,7 +674,8 @@ Route::get('/admin', function () {
     $data=User::all();
     $collaboration=Collaboration::all();
     $inform=Inform::all();
-    return view('admin',compact('data','collaboration','inform'));
+    $archive=Archived::all();
+    return view('admin',compact('data','collaboration','inform','archive'));
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
@@ -726,6 +728,7 @@ Route::post('/admin-create', function (Illuminate\Http\Request $request) {
 Route::get('/collaboration', function () {
     $data=Collaboration::all();
     $inf=Inform::all();
+    
     return view('collaboration',compact('data','inf'));
 })->middleware(['auth', 'verified'])
 ->name('collaboration');
@@ -758,6 +761,11 @@ Route::post('/submit-data', function () {
     $data->image=request('image');
     $data->save();
 
+    $archive=new Archived();
+    $archive->content=request('content');
+    $archive->image=request('image');
+    $archive->save();
+
     return redirect('/admin#post');
 });
 
@@ -770,6 +778,14 @@ Route::get('/deletemessage/{id}', function($id){
  
  });
  
+
+ Route::get('/deletearchived/{id}', function($id){
+    $colls=Archived::find($id);
+    $colls->delete();
+ 
+    return redirect('/admin#archive');
+ 
+ });
 
 
 

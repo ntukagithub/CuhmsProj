@@ -21,6 +21,7 @@
                 <a href="#post" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-solid fa-bullhorn px-3 text-lg text-yellow-400"></i>Announce users</div></a>
                 <a href="#discussion" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-regular fa-message px-3 text-lg text-yellow-400"></i>Discussions</div></a>
                 <a href="#create" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-regular fa-square-plus text-lg px-3 text-yellow-400"></i>Create User</div></a>
+                <a href="#archive" class="sidebar-link"><div class="text-lg py-2 px-5 mt-2"><i class="fa-solid fa-box-archive text-lg px-3 text-yellow-400"></i>Archived</div></a>
                 <div class="text-sm opacity-25  absolute bottom-3 bg-inherit text-white py-2">@Created by cuhms team.2024</div>
             </div>
         </div>
@@ -28,7 +29,7 @@
         <!-- Main Content -->
         <div class="col-start-3 col-end-13 border border-gray-600  m-1  ml-8 overflow-hidden overflow-y-hidden">
 
-            <div id="dashboard" class=" text-white h-[100vh] w-full ">
+                <div id="dashboard" class=" text-white h-[100vh] w-full ">
                 <div class="flex  gap-5 p-5">
                         <div class="w-[95%] bg-gray-800 p-4 border-2 border-gray-800 rounded-lg mx-auto mt-3 poppins h-[35vh] pl-10 pt-[60px]  justify-center items-center hover:cursor-pointer hover:border-2 duration-300 hover:border-yellow-500">
                             <div class="text-yellow-500 font-extrabold text-3xl ">WELCOME ADMIN</div>
@@ -134,7 +135,6 @@
                     <div class=" max-w-[500px] h-[78vh] mx-auto border border-gray-600 overflow-scroll overflow-x-hidden overflow-y-auto  mt-0  ">
                     
                     @foreach ($inform as $inform )
-
                         <div class="flex ml-10">
                             <div class="bg-white w-[40px] h-[40px] mt-4 mr-4 rounded-full overflow-hidden"> <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /></div>
                             <div class="border border-red-500 w-[350px]  text-left p-4 mt-4 ml-1 rounded-xl text-gray-400">{{$inform->content}}</div>
@@ -149,7 +149,7 @@
                     <div >
                                 <form  method="post" action="/submit-data" class="max-w-[500px] h-[7vh] bg-white mx-auto mt-[-3px] rounded-b flex shadow-lg " >
                                 @csrf
-                                <textarea name="content" rows="number_of_rows" cols="number_of_columns" placeholder="Create Your Post Here..." class="rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900  autocomplete="off" required"></textarea>
+                                <textarea name="content"  rows="number_of_rows" cols="number_of_columns" placeholder="Create Your Post Here..." class="rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900  autocomplete="off" required"></textarea>
                                 <input type="hidden" name="image"  value="joel.jpg">
                                 <!-- <input  type="text" name="content" placeholder="Create Your Post Here..." class=" rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900 " autocomplete="off" required   > -->
                                 <button type="submit" wire:click="$refresh" class="border h-[6vh] border-gray-900 bg-gray-900 w-[44px] mt-1 hover:bg-gray-600 duration-300 hover:border-gray-600 rounded-r" wire:click="$refresh" > <i class="fa-solid fa-paper-plane text-1xl  text-white  "></i> </button>
@@ -174,6 +174,24 @@
                         <div class=""><a href="{{'/delete/'.$collaboration->id}}" onclick="return confirm('are you sure you want to delete this massage!!');"><li class="fa-solid fa-trash text-red-600 text-2xl pt-5 pl-3"></li></a></div>
                     </div>
                 @endforeach
+                    
+                </div>
+            </div>
+
+            <div id="archive" class=" text-white h-[100vh] w-full text-center  ">
+            
+               <div class="text-2xl font-extrabold text-center pt-[10px] p-2">Archived Announcement</div>
+               <div class="bg-gray-600 w-full h-[1px] "></div>
+                <div class="max-w-[500px] mx-auto text-left border border-gray-600 rounded h-[85vh] mt-3 overflow-scroll overflow-x-hidden overflow-y-auto">
+
+               @foreach ($archive as $archive )
+                   <div class="flex mt-2 ml-5 ">
+                        <div class="bg-white w-[40px] h-[40px] mt-2 ml-2 rounded-full overflow-hidden"> <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /></div>
+                        <div class=" bg-gray-700 w-[350px]  p-4 mt-1.5 ml-3 rounded-xl text-gray-300">{{$archive->content}}</div>
+                        <div class=""><a href="{{'/deletearchived/'.$archive->id}}" onclick="return confirm('are you sure you want to delete this massage!!');"><li class="fa-solid fa-xmark text-red-600 text-2xl pt-5 pl-3"></li></a></div>
+                    </div>
+                @endforeach
+                
                     
                 </div>
             </div>
