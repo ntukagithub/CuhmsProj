@@ -49,6 +49,7 @@
 
                 <div class=" flex gap-4 w-[95%] mx-auto mt-5">
                     <div>
+
                         <div class="bg-gray-800 w-[230px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
                             <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Messaging</div>
                             <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit.  nesciunt maxime deserunt</div>
@@ -99,10 +100,12 @@
                         <th>CREATED_DATE</th>
                         <th>ACTION</th>
                       </tr>
+
                       
                     <?php
                      $count =1;
                     ?>
+
           
                     @foreach ($data as $data )   
                     <tr class="w-[100%] mx-auto bg-gray-800 justify-between mt-5  border border-gray-600   text-white text-center ">
@@ -221,6 +224,7 @@
 
                         <div class="mt-4">
                         <label for="role" class="text-xl pl-1">Role</label><br>
+
                         <select wire:model="role" id="role" name="role" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"  >
                             <option value="" class="text-center">-------choose a user professional-------</option>
                             <option value="IT" class="">IT</option>
@@ -242,9 +246,11 @@
                         </div>
 
                         <div class="mt-4">
+
                             <label for="password" class="text-xl pl-1">Password</label><br>
                             <input type="text" name="password" required id="password" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"><br>
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        
                         </div>                   
                             <!-- <input type="hidden"name="password" id="password" value="{{$data->password}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
                             <input type="hidden"name="dp" id="dp" value="{{$data->dp}}" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none mt-1"><br>
@@ -268,6 +274,8 @@
             <!-- Add your main content here -->
         </div>
     </div>
+
+
 
     <script>
         // JavaScript for toggling active state of sidebar links
