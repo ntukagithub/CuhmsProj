@@ -48,9 +48,16 @@ Route::view('dashboard', 'dashboard')
 //     ->middleware(['auth', 'verified','admin'])
 //     ->name('admin');
 
-Route::view('it', 'it')
-    ->middleware(['auth', 'verified','it'])
-    ->name('it');
+// Route::view('it', 'it')
+//     ->middleware(['auth', 'verified','it'])
+//     ->name('it');
+
+Route::get('/it', function ()  {
+    //  $data=Collaboration::whereNull('created_at')->count();
+    //  dd($data);
+    return view('it');
+})->middleware(['auth', 'verified','it'])
+->name('it');
 
 Route::view('procurement', 'procurement')
     ->middleware(['auth', 'verified','procurement'])
@@ -728,6 +735,7 @@ Route::post('/admin-create', function (Illuminate\Http\Request $request) {
 Route::get('/collaboration', function () {
     $data=Collaboration::all();
     $inf=Inform::all();
+
     
     return view('collaboration',compact('data','inf'));
 })->middleware(['auth', 'verified'])
