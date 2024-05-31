@@ -46,7 +46,7 @@
     <div class="w-full mt-[10px] text-center ">
        <!-- <div class="tex-xl font-bold"></div> -->
        
-       <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
        <script>
         var typed = new Typed('#auto', {
         strings: ['CAREER UNIT HUB MANAGEMENT SYSTEM👊','WE KNOW THAT YOU ARE A JOB SEEKER😯','AND THE WAY OF GETTING JOB IS VERY COMPLICATED TO THE MOST GRADUATES😩','SO WE AIM TO SIMPLIFY YOUR JOB SEARCHING PROCESS','SO TOGETHER WE SAY THAT CAREER HUB IS EMPLOYEMNT FOUNDATION👊','YOU ARE WELCOME🤷‍♂️'],
