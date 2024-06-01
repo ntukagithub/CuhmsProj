@@ -43,12 +43,11 @@
                         </div>
 
                         <div class="mt-4">
-                        <label for="role" class="text-xl pl-1">Role</label><br>
+                        <label for="role" class="text-xl pl-1" name="role">Role</label><br>
                         <select wire:model="role" id="role" name="role" class="py-2 px-2 bg-gray-600 rounded w-full focus:border-none  mt-1"  >
-                            <option value="" class="" >{{$data->role}}</option>
+                            <option  value="{{$data->role}}" >{{$data->role}}</option>
                             <option value="IT" class="">IT</option>
                             <option value="Procurement">Procurement</option>
-                            <!-- <option value="Computer_science">Computer_science</option> -->
                             <option value="marketing">marketing</option>
                             <option value="admin">admin</option>
                             <option value="B_administration">B_Administration</option>

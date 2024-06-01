@@ -8,7 +8,7 @@ use App\Models\electrical_engineeringposts;
 use App\Models\civil_engineeringposts;
 use App\Models\mechanical_engineeringposts;
 use App\Models\procurementposts;
-use App\Models\ba_hrposts;
+use App\Models\Ba_hr;
 use App\Models\lawposts;
 use App\Models\marketposts;
 use App\Models\b_administrationposts;

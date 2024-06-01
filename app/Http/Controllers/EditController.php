@@ -21,6 +21,6 @@ public function update(Request $request,$id)
        $data->email=$request->input('email');
        $data->role=$request->input('role');
        $data->update();
-    return redirect('/');
+    return redirect('/admin#users');
     }
 }

@@ -116,7 +116,7 @@
                             <td>{{$data->created_at}}</td>
                             <td class="">
                             <a href="{{url('/adminedit/'. $data->id )}}"><i class="fa-solid fa-edit text-yellow-500 pl-3 hover:shadow-lg text-xl"></i></a> 
-                            <a href="{{ url('/delete/'. $data->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
+                            <a href="{{ url('/deletee/'. $data->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
                             <i class="fa-solid fa-trash text-red-600 pl-2 text-xl"></i>
                             </a>
                         </td>
