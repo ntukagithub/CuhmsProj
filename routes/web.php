@@ -690,6 +690,8 @@ Route::get('/adminedit/{id}', function ($id) {
     return app('App\Http\Controllers\EditController')->show($id);
 });
 
+
+//this is the commit for updating the users in the users table
 Route::put('/update/{id}', function ($id) {
 
     $data=User::find($id);
