@@ -704,11 +704,10 @@ Route::put('/update/{id}', function ($id) {
 });
 
 
-Route::get('delete/{id}', function($id){
+Route::get('deletee/{id}', function($id){
 
     $data = User::find($id);
     $data->delete();
-
     return redirect('/admin#users');
 });
 
