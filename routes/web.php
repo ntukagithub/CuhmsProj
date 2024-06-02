@@ -704,6 +704,8 @@ Route::put('/update/{id}', function ($id) {
 });
 
 
+
+//this is the commit for deleting the users in the users table
 Route::get('deletee/{id}', function($id){
 
     $data = User::find($id);
