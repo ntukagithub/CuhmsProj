@@ -38,7 +38,7 @@
 
 
 
-<div class="max-w-[900px] mx-auto mt-[170px] ">
+<div class="max-w-[1000px] mx-auto mt-[170px] ">
     <div class="width-full  text-3xl">
         <b class="text-yellow-500">CUHMS:</b><b id="auto" class="pl-3 text-gray-300 font-bold pt-1"></b>
     </div>
@@ -56,12 +56,7 @@
     });
   </script>
   <div class="">
-      <span class="text-1xl leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est 
-        quos porro, aut magni, voluptatum dicta incidunt, minus ad tenetur impedit 
-        quasi deserunt totam facere sit! Nemo quia quas aperiam!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.  
-      </span>
+      <span class="text-1xl leading-7">A career unit management system is designed to streamline the process of career development and management for the graduates. It allows for efficient tracking of employee progress, skill development, and performance evaluations. This system provides tools for setting career goals, planning career paths, and aligning graduates objectives after finishing their univesities or colleges.   </span>
     </div>
 
     
