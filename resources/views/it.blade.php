@@ -1,5 +1,6 @@
 
 <x-app-layout>
+<link rel="stylesheet" href="css/pico.min.css" />
   
 <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
 
@@ -7,9 +8,7 @@
   <h1 class="text-center pt-3 text-3xl font-extrabold text-yellow-500 animate-bounce">OUR INFORMATION TECHNOLOGY HUB</h1>
 
   <div class="max-w-[900px] mx-auto flex items-center gap-5 mt-4 text-gray-400 pt-2 pb-5 text-1xl text-center">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    Corrupti aliquid assumenda iure quisquam non soluta, dolore quidem. Quam, hic. Nihil, incidunt illum. officia hic distinctio
-    repudiandae reiciendis possimus ad laborum, soluta, dolore quidem. Quam, hic. Nihil, incidunt illum.
+  Welcome to the Career Unit Management System. This platform is designed to support your career growth and development. Utilize our tools to set career goals, track progress, and collaborate with peers. Stay updated with the latest career opportunities and resources. Together, we can achieve excellence and drive success in your professional journey.
   </div>
 
 </div>

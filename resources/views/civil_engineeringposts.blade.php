@@ -14,7 +14,7 @@
 </head>
 <body>
 <x-app-layout>
-<div class="border border-yellow-500 py-2 px-5 w-[120px] absolute ml-[240px] mt-[20px] rounded-lg text-center hover:bg-yellow-500 hover:text-white  hover:font-bold hover:cursor-pointer duration-300 "> <a href="{{route('civil_engineering')}}"><i class="fa-solid fa-house pr-2 text-white hover:text-gray-900 "></i>Home</a></div>
+<div class="border border-yellow-500 py-2 px-5 w-[120px] absolute lg:hidden ml-[240px] mt-[20px] rounded-lg text-center hover:bg-yellow-500 hover:text-white  hover:font-bold hover:cursor-pointer duration-300 "> <a href="{{route('civil_engineering')}}"><i class="fa-solid fa-house pr-2 text-white hover:text-gray-900 "></i>Home</a></div>
   <div>
   <div class="text-white max-w-[600px] mx-auto font-black  text-1xl text-center pt-1 border mt-1 rounded-t-lg  "> POSTS</div>
    <div class=" max-w-[600px] h-[78vh] mx-auto border border-gray-400 overflow-scroll overflow-x-hidden overflow-y-auto  mt-0  ">

@@ -37,7 +37,7 @@
    </div>
    <div class="max-w-[600px] mx-auto h-[0.5vh] bg-gray-900 "></div>
    <div >
-            <form  method="post" action="/marketgposts" class="max-w-[600px] h-[7vh] bg-white mx-auto mt-[-3px] rounded-b flex shadow-lg " >
+            <form  method="post" action="/marketposts" class="max-w-[600px] h-[7vh] bg-white mx-auto mt-[-3px] rounded-b flex shadow-lg " >
             @csrf
             <textarea name="content" rows="number_of_rows" cols="number_of_columns" placeholder="Create Your Post Here..." class="rounded-s-lg overflow-y-hidden w-[90%] h-[6vh] mt-1 ml-1  focus:border-none border-2 border-gray-900 text-gray-900  autocomplete="off" required"></textarea>
             <input type="hidden" name="image"  value="joel.jpg">

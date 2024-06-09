@@ -29,17 +29,61 @@
         <!-- Main Content -->
         <div class="col-start-3 col-end-13 border border-gray-600  m-1  ml-8 overflow-hidden overflow-y-hidden">
 
-                <div id="dashboard" class=" text-white h-[100vh] w-full ">
-                <div class="flex  gap-5 p-5">
-                        <div class="w-[95%] bg-gray-800 p-4 border-2 border-gray-800 rounded-lg mx-auto mt-3 poppins h-[35vh] pl-10 pt-[60px]  justify-center items-center hover:cursor-pointer hover:border-2 duration-300 hover:border-yellow-500">
-                            <div class="text-yellow-500 font-extrabold text-3xl ">WELCOME ADMIN</div>
-                            <div class="opacity-75">TO OUR CAREER UNIT HUB MANAGEMENT SYSTEM</div>
-                            
-                        </div>
+    <div id="dashboard" class=" text-white h-[100vh] w-full ">
+    <div class="flex  gap-5 p-5">
+    <div class="w-[95%]  bg-gray-800 p-4 border-2 border-gray-800 rounded-lg mx-auto mt-3 poppins h-[35vh] pl-10 pt-[60px] flex  justify-center items-center hover:cursor-pointer hover:border-2 duration-300 hover:border-yellow-500">
+  <div class="text-left mr-[50px]">
+    <div class="text-yellow-500 font-extrabold text-4xl pb-3">CUHMS</div>
+    <div class="opacity-75 mb-4 text-3xl">USERS</div>
+    </div>
+    
+    <div class="relative flex justify-center items-center">
+        <svg class="w-24 h-24" viewBox="0 0 100 100">
+            <circle class="text-gray-700" stroke-width="10" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50"/>
+            <circle id="progressCircle" class="text-yellow-500" stroke-width="10" stroke-dasharray="282.6" stroke-dashoffset="282.6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50"/>
+        </svg>
+        <div class="absolute text-2xl font-bold" id="percentageText">0%</div>
+    </div>
+</div>
+
+@foreach ($data as $counts )
+    
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const percentage =75; // Set your percentage value here
+        const progressCircle = document.getElementById('progressCircle');
+        const percentageText = document.getElementById('percentageText');
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        progressCircle.style.strokeDasharray = `${circumference}`;
+        progressCircle.style.strokeDashoffset = `${circumference}`;
+
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100 * circumference);
+            progressCircle.style.strokeDashoffset = offset;
+            percentageText.textContent = `${percent}`;
+        }
+
+        // Animate the percentage display
+        let currentPercentage = 0;
+        const animate = setInterval(() => {
+            if (currentPercentage < percentage) {
+                currentPercentage++;
+                setProgress(currentPercentage);
+            } else {
+                clearInterval(animate);
+            }
+        }, 20); // Adjust the speed of the animation here
+    });
+</script>
+@endforeach
 
                         <div class="w-[95%] bg-gray-800 p-5 border-2 border-gray-800 duration-300 rounded-lg mx-auto mt-3 poppins h-[35vh] hover:cursor-pointer hover:border-2 hover:border-yellow-500 ">
                             <div class=" text-yellow-500 text-2xl font-extrabold">SUMMARY ABOUT CUHMS</div>
-                            <div class="opacity-75 pt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ex expedita, ad consectetur beatae sit error iusto? Quibusdam expedita dicta placeat quas pariatur assumenda ipsam neque facilis? Nemo, expedita voluptas. Lorem ipsum dolor tio atque debitis. Esse molestias adipisci reiciendis quas.</div>
+                            <div class="opacity-75 pt-2">This platform is designed to support your career growth and development. Utilize our tools to set career goals, track progress, and collaborate with peers. Stay updated with the latest career opportunities and resources. Together, we can achieve excellence and drive success in your professional journey.</div>
                         </div>
                 </div>
           
@@ -52,7 +96,7 @@
 
                         <div class="bg-gray-800 w-[230px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
                             <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Messaging</div>
-                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit.  nesciunt maxime deserunt</div>
+                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75 ">The messaging panel allows seamless communication between graduates and employees, enhancing collaboration.</div>
                         </div>
                         
                     </div>
@@ -60,7 +104,7 @@
                     <div>
                         <div class="bg-gray-800 w-[250px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
                             <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Posts</div>
-                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">Lorem, ipsum dolor  elit. amet consectetur  consequatur atque nesciunt maxime deserunt</div>
+                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">The Posts panel allows the sharing of job opportunities or alerts from different site that can enhance easy getting of job notification within cuhms.</div>
                         </div>
                         
                     </div>
@@ -68,7 +112,7 @@
                     <div>
                         <div class="bg-gray-800 w-[250px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
                             <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Discussions</div>
-                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur   maxime deserunt</div>
+                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">The discussion panel enables users to engage in topic-specific conversations, share ideas, and collaborate on career-related matters.</div>
                         </div>
                         
                     </div>
@@ -76,7 +120,7 @@
                     <div>
                         <div class="bg-gray-800 w-[250px] h-[35vh]  rounded-lg pt-6 border-2 border-gray-800 hover:border-2 hover:border-yellow-500  duration-300 hover:cursor-pointer">
                             <div class="text-center text-xl bg-gray-900 w-[140px] py-2 mx-auto rounded-lg border border-yellow-500">Collaboration</div>
-                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit. Eligendi con </div>
+                            <div class="text-sm pl-4 p-2 text-center mt-5 opacity-75">The collaboration panel allows users to work together on projects, share resources, and support each other's career growth within cuhms.</div>
                         </div>
                         
                     </div>

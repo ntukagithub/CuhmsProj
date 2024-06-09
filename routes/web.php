@@ -799,5 +799,12 @@ Route::get('/deletemessage/{id}', function($id){
  });
 
 
+ Route::get('/user', function () {
+    $count=User::all()->count();
+    return view('admin',compact('count'));
+})->middleware(['auth', 'verified'])
+->name('admin');
+
+
 
 require __DIR__.'/auth.php';

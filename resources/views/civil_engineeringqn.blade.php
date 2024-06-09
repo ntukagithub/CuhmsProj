@@ -1,7 +1,3 @@
-
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,13 +12,13 @@
 <x-app-layout>
 <a href="{{route('civil_engineering')}}"><div class="border border-yellow-500 py-2 px-5 w-[120px] absolute ml-[240px] mt-[20px] rounded-lg text-center hover:bg-yellow-500 hover:text-white  hover:font-bold hover:cursor-pointer duration-300 "> <i class="fa-solid fa-house pr-2 text-white hover:text-gray-900 "></i>Home</div> </a>
   <div>
-  <div class="text-gray-900 bg-white max-w-[600px] mx-auto font-black  text-1xl text-center pt-1 border mt-1 rounded-t-lg  "> Discussions</div>
+  <div class="text-gray-900 bg-white sm:max-w-[600px] mx-auto font-black  text-1xl text-center pt-1 border mt-1 rounded-t-lg sm:flex-nowrap sm:w-full  "> Discussions</div>
    <div class=" max-w-[600px] h-[78vh] mx-auto border border-gray-400 overflow-scroll overflow-x-hidden overflow-y-auto  mt-0  ">
   
    @foreach($data as $data)
     <div class="flex ml-14">
       <div class="bg-white w-[40px] h-[40px] mt-2 ml-2 rounded-full overflow-hidden"> <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /></div>
-   <div class="border w-[350px]  p-4 mt-1.5 ml-3 rounded-xl text-white" {{$data->content}}</div>
+   <div class="border w-[350px]  p-4 mt-1.5 ml-3 rounded-xl text-white"> {{$data->content}}</div>
    </div>
    @endforeach
    
@@ -53,4 +49,5 @@
 @livewireScripts
 </body>
 </html>
+
 
