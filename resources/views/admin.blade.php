@@ -42,17 +42,32 @@
             <circle class="text-gray-700" stroke-width="10" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50"/>
             <circle id="progressCircle" class="text-yellow-500" stroke-width="10" stroke-dasharray="282.6" stroke-dashoffset="282.6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50"/>
         </svg>
-        <div class="absolute text-2xl font-bold" id="percentageText">0%</div>
+
+       
+        @foreach ($data as $counts)
+        <?php $count = $counts->count();
+              
+            ?>
+        @endforeach 
+
+        <?php
+
+        $percentage = ($count/100)*100;
+        ?>
+        <div class="absolute text-2xl font-bold" id="percentageText">
+        {{ $percentage }} %
+        </div>
     </div>
 </div>
 
-@foreach ($data as $counts )
+
+
     
 
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const percentage =75; // Set your percentage value here
+        const percentage ="<?php  echo $percentage; ?>"; // Set your percentage value here
         const progressCircle = document.getElementById('progressCircle');
         const percentageText = document.getElementById('percentageText');
         const radius = progressCircle.r.baseVal.value;
@@ -64,7 +79,7 @@
         function setProgress(percent) {
             const offset = circumference - (percent / 100 * circumference);
             progressCircle.style.strokeDashoffset = offset;
-            percentageText.textContent = `${percent}`;
+            percentageText.textContent = `${percent}%`;
         }
 
         // Animate the percentage display
@@ -79,11 +94,54 @@
         }, 20); // Adjust the speed of the animation here
     });
 </script>
-@endforeach
+
 
                         <div class="w-[95%] bg-gray-800 p-5 border-2 border-gray-800 duration-300 rounded-lg mx-auto mt-3 poppins h-[35vh] hover:cursor-pointer hover:border-2 hover:border-yellow-500 ">
-                            <div class=" text-yellow-500 text-2xl font-extrabold">SUMMARY ABOUT CUHMS</div>
-                            <div class="opacity-75 pt-2">This platform is designed to support your career growth and development. Utilize our tools to set career goals, track progress, and collaborate with peers. Stay updated with the latest career opportunities and resources. Together, we can achieve excellence and drive success in your professional journey.</div>
+                        <div class="text-yellow-500 text-4xl font-bold text-center pt-10 mt-4">ARCHIVED</div>
+                        @foreach($number as $numbers)
+                            <?php $percent =$numbers->count(); ?>
+                        @endforeach
+                        <?php
+                      
+                      $archiv = ($percent/10)*100;
+                        ?>
+                        <div class="opacity-75 pt-2 font-bold text-3xl text-center "></div>
+                        <div id="line" class="h-7 w-[90%] bg-gray-300 mt-2 relative rounded-full overflow-hidden mx-auto">
+                        
+                        <div id="fill" class="h-full absolute top-0 left-0 transition-all duration-3000 bg-yellow-500 text-center font-bold text-gray-900 text-xl "><?php echo $archiv ?>%</div>
+                    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const percentage = "70"; // Example percentage (change as needed)
+        const fill = document.getElementById('fill');
+        
+        // Set the initial width of the filled part based on the percentage
+        fill.style.width = `<?php  echo $archiv ?>%`;
+
+        // Animate color change gradually
+        let currentPercentage = 0;
+        const animate = setInterval(() => {
+            if (currentPercentage < percentage) {
+                currentPercentage++;
+                // Change color based on current percentage
+                if (currentPercentage < 50) {
+                    fill.classList.remove('bg-yellow-500');
+                    fill.classList.add('bg-green-500'); // Green color
+                } else if (currentPercentage < 80) {
+                    fill.classList.remove('bg-green-500');
+                    fill.classList.add('bg-yellow-500'); // Yellow color
+                } else {
+                    fill.classList.remove('bg-yellow-500');
+                    fill.classList.add('bg-red-500'); // Red color
+                }
+            } else {
+                clearInterval(animate);
+            }
+        }, 50); // Increase the interval time for slower animation
+    });
+</script>
+
                         </div>
                 </div>
           

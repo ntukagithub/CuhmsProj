@@ -682,7 +682,10 @@ Route::get('/admin', function () {
     $collaboration=Collaboration::all();
     $inform=Inform::all();
     $archive=Archived::all();
-    return view('admin',compact('data','collaboration','inform','archive'));
+    $number=archived::all();
+    $count=User::all()->count();
+    // return response()->json(['count' => $count]);
+    return view('admin',compact('data','collaboration','inform','archive','count','number'));
 })->middleware(['auth', 'verified','admin'])
 ->name('admin');
 
@@ -799,11 +802,11 @@ Route::get('/deletemessage/{id}', function($id){
  });
 
 
- Route::get('/user', function () {
-    $count=User::all()->count();
-    return view('admin',compact('count'));
-})->middleware(['auth', 'verified'])
-->name('admin');
+//  Route::get('/user', function () {
+//     $count=User::all()->count();
+//     return view('admin',compact('count'));
+// })->middleware(['auth', 'verified'])
+// ->name('admin');
 
 
 
