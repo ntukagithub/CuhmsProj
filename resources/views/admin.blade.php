@@ -53,6 +53,7 @@
         <?php
 
         $percentage = ($count/100)*100;
+
         ?>
         <div class="absolute text-2xl font-bold" id="percentageText">
         {{ $percentage }} %
@@ -104,6 +105,7 @@
                         <?php
                       
                       $archiv = ($percent/10)*100;
+
                         ?>
                         <div class="opacity-75 pt-2 font-bold text-3xl text-center "></div>
                         <div id="line" class="h-7 w-[90%] bg-gray-300 mt-2 relative rounded-full overflow-hidden mx-auto">
