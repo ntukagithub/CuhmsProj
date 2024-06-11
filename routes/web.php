@@ -33,6 +33,7 @@ use App\Models\Clinical_medicineqn;
 use App\Models\Collaboration;
 use App\Models\Inform;
 use App\Models\Archived;
+use App\Models\Samwel;
 
 
 
