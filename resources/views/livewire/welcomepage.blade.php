@@ -1,3 +1,4 @@
+<div>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -107,3 +108,4 @@ refreshPage(); // Call the refresh function on page load
 @livewireScripts
 </body>
 </html>
+</div>
