@@ -28,9 +28,9 @@ $logout = function (Logout $logout) {
                         <img src="photos/joel.jpg" alt="" width="300px" height="300px">
                     </div> -->
 
-                    <div class="w-[32px] h-[32px]  mt-[12px]  absolute right-[30px] overflow-hidden">
+                    <!-- <div class="w-[32px] h-[32px]  mt-[12px]  absolute right-[30px] overflow-hidden">
                         <img src="photos/notification.png" alt="" width="300px" height="300px">
-                    </div>
+                    </div> -->
                     
                     
 
