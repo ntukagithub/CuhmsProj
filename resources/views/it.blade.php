@@ -30,9 +30,7 @@
 
 <a href="{{ route('collaboration') }}" class="">
 
-  <div class="bg-yellow-500 text-center font-bold text-gray-900 absolute ml-[210px] mt-[-10px] pt-1 rounded-full w-[30px] h-[30px]">3</div>
-  
- 
+
   <div class="border border-gray-600  w-[230px] rounded-lg  hover:bg-gray-600 hover:text-white  hover:font-bold hover:cursor-pointer duration-300  h-[230px] flex flex-col justify-center " > <i class="fa-regular fa-message  text-yellow-500 hover:text-yellow-500 text-center text-3xl "></i><div class="text-center text-2xl pt-2 p-3 text-yellow-500 font-extralight">Careers Collaboration</div></div>
 </a>
 
