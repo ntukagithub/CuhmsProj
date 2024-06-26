@@ -2,7 +2,6 @@
 
 <x-app-layout>
 
-
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.3.0-web/css/all.min.css')}}">
     <div class="grid grid-cols-12 gap-6 h-screen">
         <!-- Sidebar -->
