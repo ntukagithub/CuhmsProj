@@ -29,7 +29,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'accountancy'=>Accountancy::class,
-            'admin'=>Admin::class,
+            // 'admin'=>Admin::class,
+            'admin' => \App\Http\Middleware\CheckIfAdmin::class,
             'b_administration'=>B_administration::class,
             'ba_hr'=>Ba_hr::class,
             'civil_engineering'=>Civil_engineering::class,
