@@ -700,6 +700,7 @@ Route::put('/update/{id}', function ($id) {
     //    $data->dp=request('dp');
        $data->update();
     return redirect('/admin#users');
+    
 
 });
 
